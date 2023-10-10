@@ -1,0 +1,14 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: first_api_server_path_route
+          uri: http://localhost:1000
+          predicates:
+            - Path=/first-api/**
+        - id: second_api_server_path_route
+          uri: http://localhost:2000
+          predicates:
+            - Path=/second-api/**
+server:
+  port: 8080
